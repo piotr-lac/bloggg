@@ -1,2 +1,17 @@
-<h1>Posts#edit</h1>
-<p>Find me in app/views/posts/edit.html.erb</p>
+<h1>Edycja Treści</h1>
+
+<% if @post.errors.any? %>
+  <% @post.errors.full_messages.each do |msg| %>
+    <%= msg %> <br>
+  <% end %>
+<% end %>
+
+<%= form_for @post do |f| %>
+<p> Tytuł : <% f.label :title %> </p>
+<p> <%= f.text_field :title %> </p>
+<p> Treść <% f.label :content %> </p>
+<p> <%= f.text_field :content %> </p>
+<p> <%= f.submit "zapisz post" %> </p>
+<% end %>
+<p><%= link_to "Posty", posts_path %></p>
+
