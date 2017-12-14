@@ -1,0 +1,10 @@
+<h1>Dodaj posta</h1>
+
+<%= form_for @post do |f| %>
+<p> Tytuł : <% f.label :title %> </p>
+<p> <%= f.text_field :title %> </p>
+<p> Treść <% f.label :content %> </p>
+<p> <%= f.text_field :content %> </p>
+<p> <%= f.submit "dodaj post" %> </p>
+<% end %>
+

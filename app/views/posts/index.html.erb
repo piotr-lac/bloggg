@@ -1,0 +1,17 @@
+<h1>All your posts here</h1>
+
+<table>
+	<tr>
+		<th> Tytuł </th>
+		<th> Treść </th>
+	</tr>
+	<% @posts.each do |post| %>
+	<tr>
+		<td> <%= post.title %> </td>
+		<td> <%= post.content %> </td>
+	</tr>
+	<% end %>
+</table>
+
+<%= link_to "dodaj nowy post", new_post_path %>
+
